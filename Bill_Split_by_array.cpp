@@ -7,7 +7,7 @@ class Instances
 	string Reason;
 	string Who_paid;
 };
-void Input(int *n , Instances* &I)
+void Input(int *n , Instances* I)
 {
 	cout<<"Enter how many times money has been spent : ";
 	cin>>*n;
@@ -28,29 +28,29 @@ void Input(int *n , Instances* &I)
 	}
 	
 }
-void Output(int n ,Instances* &I_temp)
+void Output(int n ,Instances *I)
 {
 	float Due;
 	for(int i=0;i<n;i++)
 	{
-		if (I_temp->Amount < 0)
-			cout<<"Amount spent = "<<(I_temp->Amount*(-1))<<" by "<<I_temp->Who_paid<<" for "<<I_temp->Reason<<endl;
+		if (I->Amount < 0)
+			cout<<"Amount spent = "<<(I->Amount*(-1))<<" by "<<I->Who_paid<<" for "<<I->Reason<<endl;
 			
 		else
-			cout<<"Amount spent = "<<I_temp->Amount<<" by "<<I_temp->Who_paid<<" for "<<I_temp->Reason<<endl;
-		Due=Due+(I_temp->Amount/2);
-		I_temp++;
+			cout<<"Amount spent = "<<I->Amount<<" by "<<I->Who_paid<<" for "<<I->Reason<<endl;
+		Due=Due+(I->Amount/2);
+		I++;
 	}
 	if(Due < 0)
-		cout<<"You need to pay him : "<<(Due*(-1))<<endl;
+		cout<<"You need to pay him : Rs "<<(Due*(-1))<<endl;
 	else
-		cout<<"He Should Pay you : "<<Due<<endl;
+		cout<<"He Should Pay you : Rs "<<Due<<endl;
 }
 int main()
 {
 	int n;
-	Instances *I = new Instances[n],*I_temp = I;
+	Instances *I = new Instances[n];
 	Input(&n,I);
-	Output(n,I_temp);
+	Output(n,I);
 	return 0;
 }
