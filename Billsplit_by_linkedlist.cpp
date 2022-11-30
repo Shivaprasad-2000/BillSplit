@@ -57,9 +57,9 @@ void Output(Node* Head)
 		Head=Head->Next;
 	}
 	if(Due < 0)
-		cout<<"You need to pay him : Rs "<<(Due*(-1))<<endl;
+		cout<<"You should pay him : Rs "<<(Due*(-1))<<endl;
 	else
-		cout<<"He Should Pay you : Rs "<<Due<<endl;
+		cout<<"He Should pay you : Rs "<<Due<<endl;
 }
 int main()
 {
