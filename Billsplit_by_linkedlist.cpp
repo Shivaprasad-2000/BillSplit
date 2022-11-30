@@ -17,7 +17,7 @@ class Node
 			A=Amount;
 	}
 };
-void Node_at_tail(Node* &Tail,float A,string R,string W)
+void New_node(Node* &Tail,float A,string R,string W)
 {
 	Node*temp=new Node(A,R,W);
 	Tail->Next=temp;
@@ -38,7 +38,7 @@ void Input(Node* &Tail)
 		cin>>R;
 		cout<<"Who paid the Ammount?\n(me) for you (him) for him : ";
 		cin>>W; 
-		Node_at_tail(Tail,A,R,W);
+		New_node(Tail,A,R,W);
 		cout<<"Do you want to enter more data?\n(y) for yes (n) for no : ";
 		cin>>C;
 	}
